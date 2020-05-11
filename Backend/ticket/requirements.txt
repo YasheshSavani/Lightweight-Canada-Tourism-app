@@ -1,0 +1,6 @@
+flask
+flask_pymongo
+flask_cors
+pymysql
+pdfkit
+WeasyPrint<43

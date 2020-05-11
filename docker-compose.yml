@@ -1,0 +1,31 @@
+version: '3'
+services:
+    web:
+        image: akash80e/back_up:webclient
+        container_name: web
+        network_mode: host
+        ports:
+            - "3000:5000"
+            - "3000:5100"
+        volumes:
+            - ./web-client:/app
+    search:
+        image: akash80e/back_up:search_api
+        container_name: search
+        network_mode: host
+        ports:
+            - "5000:5000"
+    signin:
+        image: akash80e/back_up:signin_api
+        container_name: signin
+        network_mode: host
+        ports:
+            - "5002:5002"
+    ticket:
+        image: akash80e/back_up:ticket_api
+        container_name: ticket
+        network_mode: host
+        ports:
+          - "5001:5001"
+        volumes:
+          - ./Backend/ticket:/app
